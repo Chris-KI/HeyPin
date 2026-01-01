@@ -6,18 +6,37 @@
     <title>Christian Kreischer | Post-Anzeigevorrichtung</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 850px; margin: 0 auto; padding: 20px; background-color: #f0f2f5; }
+        
+        /* --- NEU: Design für das Logo --- */
+        .logo-bild {
+            max-width: 200px; /* Maximale Breite, damit es nicht zu riesig ist */
+            height: auto;     /* Höhe passt sich automatisch an */
+            margin-bottom: 20px; /* Abstand zur Überschrift darunter */
+            border-radius: 12px; /* Leicht abgerundete Ecken passend zum Header */
+            border: 4px solid rgba(255,255,255,0.9); /* Ein weißer Rahmen, damit es sich abhebt */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Ein leichter Schatten für einen 3D-Effekt */
+        }
+        /* -------------------------------- */
+
         header { background: #1a508b; color: #fff; padding: 2.5rem; text-align: center; border-radius: 12px; margin-bottom: 30px; }
         section { background: #fff; padding: 25px; margin-bottom: 25px; border-radius: 12px; shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #ddd; }
-        h1, h2 { color: #1a508b; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h1, h2 { color: #1a508b; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
         .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         .license-warning { border: 2px solid #c0392b; background: #fff5f5; padding: 20px; border-radius: 8px; color: #c0392b; font-weight: bold; }
         .print-settings { background: #f8f9fa; border-left: 5px solid #27ae60; padding: 15px; font-family: 'Courier New', monospace; }
         .cta-button { display: inline-block; background: #27ae60; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-size: 1.1rem; }
+        
+        /* Anpassung für kleine Handy-Bildschirme */
+        @media (max-width: 600px) {
+            .feature-list { grid-template-columns: 1fr; }
+            header { padding: 1.5rem; }
+        }
     </style>
 </head>
 <body>
 
 <header>
+    <img src="IMG-20260101-WA0018.jpg" alt="Logo Christian Kreischer Innovation" class="logo-bild">
     <h1>Post-Anzeigevorrichtung</h1>
     <p>Gebrauchsmuster von Christian Kreischer – Nie wieder umsonst zum Briefkasten.</p>
 </header>
@@ -49,7 +68,7 @@
         - Schichtdicke: 0.15mm - 0.20mm
     </div>
     <br>
-    <a href="post_anzeiger_v1.stl" class="cta-button">STL-Datei herunterladen (Privatnutzung)</a>
+    <a href="#" class="cta-button">STL-Datei bald verfügbar (Privatnutzung)</a>
 </section>
 
 <section class="license-warning">
@@ -63,7 +82,7 @@
 </section>
 
 <footer>
-    <p style="text-align: center; color: #888;">Kontakt für Lizenzanfragen: [Deine E-Mail hier einfügen]</p>
+    <p style="text-align: center; color: #888;">Kontakt für Lizenzanfragen: [Ihre E-Mail hier einfügen]</p>
 </footer>
 
 </body>
