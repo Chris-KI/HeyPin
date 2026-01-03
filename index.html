@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HeyPin | Die smarte Briefkasten-Lösung</title>
+    <title>HeyPin | Einfach, Dezent, Zuverlässig</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 850px; margin: 0 auto; padding: 20px; background-color: #f0f2f5; }
         
@@ -14,12 +14,15 @@
         #menu-overlay ul li { padding: 15px 30px; border-bottom: 1px solid rgba(255,255,255,0.1); }
         #menu-overlay ul li a { color: white; text-decoration: none; font-size: 1.1rem; display: block; }
 
-        /* --- LOGO & HEADER --- */
-        header { background: #1a508b; color: #fff; padding: 2.5rem; text-align: center; border-radius: 12px; margin-bottom: 30px; }
-        .logo-bild { max-width: 180px; border-radius: 12px; border: 4px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 15px; }
+        /* --- HEADER & TEXTE --- */
+        header { background: #1a508b; color: #fff; padding: 3rem 2rem; text-align: center; border-radius: 12px; margin-bottom: 30px; }
+        .tagline-top { font-size: 1.2rem; font-weight: bold; letter-spacing: 1px; margin-bottom: 20px; color: #e0e0e0; text-transform: uppercase; }
+        .logo-bild { max-width: 180px; border-radius: 12px; border: 4px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 20px; }
+        h1 { margin: 10px 0; font-size: 3rem; color: #fff; }
+        .description-main { font-size: 1.4rem; font-weight: bold; margin: 15px 0 10px 0; color: #fff; }
+        .description-sub { font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.4; color: #d1d8e0; }
 
         section { background: #fff; padding: 25px; margin-bottom: 25px; border-radius: 12px; border: 1px solid #ddd; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        h1 { margin: 0; font-size: 2.5rem; }
         h2 { color: #1a508b; border-bottom: 2px solid #eee; padding-bottom: 10px; }
 
         /* --- BUTTONS --- */
@@ -33,6 +36,9 @@
         .media-container { text-align: center; margin: 20px 0; }
         .responsive-media { max-width: 100%; height: auto; border-radius: 8px; }
 
+        /* --- DUMMY STYLE FÜR FEEDBACK & SHOP --- */
+        .dummy-content { color: #888; font-style: italic; padding: 20px; border: 1px dashed #ccc; text-align: center; border-radius: 8px; }
+
         /* --- RECHTSHINWEIS --- */
         .license-warning { border: 2px solid #c0392b; background: #fff5f5; padding: 25px; border-radius: 8px; color: #333; text-align: center; }
         .license-warning h2 { color: #c0392b; border-bottom: 2px solid #fadbd8; }
@@ -45,16 +51,23 @@
     <nav id="menu-overlay">
         <ul>
             <li><a href="#">Start</a></li>
-            <li><a href="#willkommen">Konzept</a></li>
+            <li><a href="#heypin">Was ist HeyPin?</a></li>
             <li><a href="#video">Video</a></li>
-            <li><a href="#impressum">Impressum & Schutz</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#feedback">Kundenfeedback</a></li>
+            <li><a href="#impressum">Impressum</a></li>
         </ul>
     </nav>
 
     <header>
+        <div class="tagline-top">Einfach, Dezent, Zuverlässig</div>
         <img src="IMG-20260101-WA0018.jpg" alt="HeyPin Logo" class="logo-bild">
         <h1>HeyPin</h1>
-        <p>Die mechanische Revolution für Ihren Briefkasten.</p>
+        <p class="description-main">Ein kurzer Blick genügt. Post ist da!</p>
+        <p class="description-sub">
+            Der erste Post Melder der so viel positive Eigenschaften in sich vereint und ihr Leben bereichern wird 
+            (keine Batterien, keine Apps, kein Bohren).
+        </p>
     </header>
 
     <section>
@@ -68,11 +81,14 @@
         </audio>
     </section>
 
-    <section id="willkommen">
-        <h2>Mechanische Genialität</h2>
-        <p>Der <strong>HeyPin</strong> ist die smarte, rein mechanische Lösung. Er ist wetterfest, langlebig und kommt ganz ohne Batterien oder Elektronik aus.</p>
+    <section id="heypin">
+        <h2>Das HeyPin Prinzip</h2>
+        <p>Der <strong>HeyPin</strong> ist die smarte, rein mechanische Lösung. Er ist wetterfest, langlebig und kommt ganz ohne Elektronik aus.</p>
         <div class="media-container">
             <img src="Kollage2.jpg.png" alt="HeyPin Collage" class="responsive-media">
+        </div>
+        <div class="dummy-content">
+            Hier werden wir bald detaillierte Infos zu den Funktionen von HeyPin einfügen.
         </div>
     </section>
 
@@ -85,14 +101,29 @@
         </div>
     </section>
 
+    <section id="shop">
+        <h2>Shop</h2>
+        <div class="dummy-content">
+            Der Shop-Bereich wird gerade vorbereitet. Bald können Sie HeyPin hier direkt bestellen.
+        </div>
+    </section>
+
+    <section id="feedback">
+        <h2>Kundenfeedback</h2>
+        <div class="dummy-content">
+            „Platzhalter für die ersten Kundenmeinungen. Wir freuen uns auf Ihre Erfahrungen!“
+        </div>
+    </section>
+
     <section id="impressum" class="license-warning">
         <h2>Rechtlicher Hinweis</h2>
         <p class="legal-text">Der HeyPin ist per Gebrauchsmuster geschützt. Ein Nachbau ohne Genehmigung ist untersagt.</p>
         <hr style="border: 0; border-top: 1px solid #fadbd8; margin: 20px 0;">
         <p><strong>Impressum:</strong><br>
-        [Straße / Hausnummer]<br>
-        [PLZ / Ort]<br>
-        Kontakt: [E-Mail-Adresse]</p>
+        HeyPin GbR<br>
+        Neurahlstedter Graben 8<br>
+        22143 Hamburg<br>
+        Kontakt: ckreischer0 (ät) gmail.com</p>
         <p>&copy; 2026 HeyPin. Alle Rechte vorbehalten.</p>
     </section>
 
@@ -114,8 +145,8 @@
 
         function sharePage() {
             const shareData = {
-                title: 'HeyPin - Der Briefkasten-Melder',
-                text: 'Schau dir den HeyPin an! Mechanisch, genial und per Gebrauchsmuster geschützt.',
+                title: 'HeyPin - Der Post Melder',
+                text: 'Einfach, Dezent, Zuverlässig. Der HeyPin zeigt dir sofort, ob Post da ist!',
                 url: window.location.href
             };
             if (navigator.share) {
