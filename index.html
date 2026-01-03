@@ -125,44 +125,144 @@
     </section>
 
     <section id="shop">
-        <h2>Shop & Zahlung</h2>
-        <div class="product-box">
-            <h3>HeyPin Set</h3>
-            <div class="price-tag">7,99 € <span style="font-size: 0.9rem; color: #777;">pro Stück</span></div>
-            <p><strong>Versand & Verpackung:</strong> 3,99 € (pauschal innerhalb DE)</p>
-            <strong>Lieferumfang:</strong>
-            <ul style="font-size: 0.95rem; margin-top: 10px;">
-                <li>1 x HeyPin Signal Einheit inkl. Verpackung</li>
-                <li>1 x Outdoor Klebestreifen passend zum HeyPin</li>
-            </ul>
+    <h2>Shop & Bestellung</h2>
+    
+    <div class="product-box">
+        <h3>HeyPin Set</h3>
+        <div class="price-tag">7,99 € <span style="font-size: 0.9rem; color: #777;">pro Stück</span></div>
+        <p><strong>Versand & Verpackung:</strong> 3,99 € (Pauschal innerhalb DE)</p>
+        
+        <strong>Lieferumfang:</strong>
+        <ul style="font-size: 0.95rem; margin-top: 10px; list-style-type: '✓ ';">
+            <li>1 x HeyPin Signal Einheit inkl. Verpackung</li>
+            <li>1 x Outdoor Klebestreifen passend zum HeyPin</li>
+        </ul>
+    </div>
+
+    <form class="order-form" id="orderForm">
+        <label for="color">1. Wähle deine Farbe:</label>
+        <select id="color" onchange="calculateTotal()">
+            <option value="Schwarz">Schwarz mit rotem Pin</option>
+            <option value="Silber-Grau">Silber/Grau mit rotem Pin</option>
+            <option value="Weiß">Weiß mit rotem Pin</option>
+        </select>
+
+        <label for="quantity">2. Anzahl (max. 10 Stück):</label>
+        <select id="quantity" onchange="calculateTotal()">
+            <option value="1">1 Stück</option>
+            <option value="2">2 Stück</option>
+            <option value="3">3 Stück</option>
+            <option value="4">4 Stück</option>
+            <option value="5">5 Stück</option>
+            <option value="10">10 Stück</option>
+        </select>
+
+        <div class="total-display" id="totalDisplay">
+            Gesamtbetrag: 11,98 €
         </div>
 
-        <form class="order-form" id="orderForm">
-            <label for="color">1. Wähle deine Farbe:</label>
-            <select id="color">
-                <option value="Schwarz">Schwarz mit rotem Pin</option>
-                <option value="Silber-Grau">Silber/Grau mit rotem Pin</option>
-                <option value="Weiß">Weiß mit rotem Pin</option>
-            </select>
+        <button type="button" class="btn btn-paypal" onclick="payWithPaypal()">
+            Direkt per PayPal zahlen
+        </button>
 
-            <label for="quantity">2. Anzahl (max. 10):</label>
-            <select id="quantity" onchange="calculateTotal()">
-                <option value="1">1 Stück</option><option value="2">2 Stück</option>
-                <option value="3">3 Stück</option><option value="4">4 Stück</option>
-                <option value="5">5 Stück</option><option value="10">10 Stück</option>
-            </select>
+        <div style="text-align: center; margin: 15px 0; color: #777;">&mdash; ODER PER BESTELLANFRAGE &mdash;</div>
 
-            <div class="total-display" id="totalDisplay">Gesamtbetrag: 11,98 €</div>
+        <label for="name">Vor- und Zuname:</label>
+        <input type="text" id="name" placeholder="Erika Mustermann" required>
 
-            <button type="button" class="btn btn-paypal" onclick="payWithPaypal()">Direkt per PayPal zahlen</button>
+        <label for="email">Deine E-Mail-Adresse:</label>
+        <input type="email" id="email" placeholder="beispiel@mail.de" required>
 
-            <p style="text-align: center; margin: 10px 0; font-size: 0.9rem; color: #777;">- ODER PER RECHNUNG -</p>
+        <label for="address">Vollständige Lieferadresse:</label>
+        <textarea id="address" rows="3" placeholder="Straße Hausnr., PLZ Ort" required></textarea>
 
-            <input type="text" id="name" placeholder="Name">
-            <input type="text" id="address" placeholder="Lieferadresse">
-            <button type="button" class="btn btn-order" onclick="sendInquiry()">Bestellanfrage senden</button>
-        </form>
-    </section>
+        <label for="message">Nachricht / Anmerkungen (optional):</label>
+        <textarea id="message" rows="2" placeholder="Z.B. Besondere Zustellhinweise..."></textarea>
+
+        <button type="button" class="btn btn-order" onclick="sendInquiry()">
+            Bestellanfrage via E-Mail senden
+        </button>
+    </form>
+</section>
+
+<script>
+    const unitPrice = 7.99;
+    const shippingPrice = 3.99;
+    const shopEmail = "ckreischer0@gmail.com";
+
+    function calculateTotal() {
+        const qty = parseInt(document.getElementById("quantity").value);
+        const total = (qty * unitPrice) + shippingPrice;
+        document.getElementById("totalDisplay").innerHTML = 
+            `Aufschlüsselung:<br>` +
+            `<small>${qty}x HeyPin (${(qty * unitPrice).toFixed(2)} €) + Versand (3,99 €)</small><br>` +
+            `<strong>Gesamtbetrag: ${total.toLocaleString('de-DE', {minimumFractionDigits: 2})} €</strong>`;
+        return total;
+    }
+
+    function payWithPaypal() {
+        const qty = document.getElementById("quantity").value;
+        const color = document.getElementById("color").value;
+        const total = calculateTotal().toFixed(2);
+        
+        const itemName = encodeURIComponent(`HeyPin Set - Farbe: ${color}`);
+        const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${shopEmail}&item_name=${itemName}&amount=${total}&currency_code=EUR&quantity=1`;
+        
+        window.open(paypalUrl, '_blank');
+    }
+
+    function sendInquiry() {
+        // Daten sammeln
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const address = document.getElementById("address").value;
+        const qty = document.getElementById("quantity").value;
+        const color = document.getElementById("color").value;
+        const message = document.getElementById("message").value;
+        
+        const subtotal = (qty * unitPrice).toFixed(2);
+        const total = (parseFloat(subtotal) + shippingPrice).toFixed(2);
+
+        // Validierung
+        if (!name || !email || !address) {
+            alert("Bitte fülle Name, E-Mail und Adresse aus, damit wir die Anfrage bearbeiten können.");
+            return;
+        }
+
+        // E-Mail Text Zusammenbau (Aufschlüsselung)
+        const subject = encodeURIComponent(`HeyPin Bestellanfrage - ${name}`);
+        const body = encodeURIComponent(
+            `Hallo HeyPin Team,\n\n` +
+            `hiermit stelle ich eine unverbindliche Bestellanfrage für den HeyPin:\n\n` +
+            `GEWÄHLTE KONFIGURATION:\n` +
+            `-------------------------------------------\n` +
+            `Produkt: HeyPin Post-Anzeiger\n` +
+            `Farbe:   ${color}\n` +
+            `Menge:   ${qty} Stück\n\n` +
+            `PREISAUFSCHLÜSSELUNG:\n` +
+            `-------------------------------------------\n` +
+            `Zwischensumme:  ${subtotal.replace('.', ',')} €\n` +
+            `Versand (pauschal): 3,99 €\n` +
+            `GESAMTBETRAG:    ${total.replace('.', ',')} €\n\n` +
+            `MEINE DATEN:\n` +
+            `-------------------------------------------\n` +
+            `Name:    ${name}\n` +
+            `E-Mail:  ${email}\n` +
+            `Adresse: ${address}\n\n` +
+            `NACHRICHT:\n` +
+            `${message || "Keine zusätzliche Nachricht."}\n\n` +
+            `-------------------------------------------\n` +
+            `Bitte sende mir die Zahlungsinformationen (Vorkasse/Rechnung) zu.`
+        );
+
+        // Mailto Link auslösen
+        window.location.href = `mailto:${shopEmail}?subject=${subject}&body=${body}`;
+    }
+
+    // Initiale Berechnung beim Laden
+    window.onload = calculateTotal;
+</script>
+
 
     <section id="feedback">
         <h2>Kundenmeinungen</h2>
