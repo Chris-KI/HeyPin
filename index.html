@@ -25,24 +25,24 @@
         section { background: #fff; padding: 25px; margin-bottom: 25px; border-radius: 12px; border: 1px solid #ddd; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         h2 { color: #1a508b; border-bottom: 2px solid #eee; padding-bottom: 10px; text-transform: uppercase; }
 
-        /* --- TEXT-STYLING --- */
-        .problem-box { background: #fff9e6; border-left: 5px solid #f1c40f; padding: 20px; border-radius: 5px; margin: 20px 0; }
-        .highlight-text { font-size: 1.2rem; font-weight: bold; color: #1a508b; text-align: center; margin: 20px 0; }
-
         /* --- SHOP & FORMULAR --- */
         .product-box { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #1a508b; }
         .price-tag { font-size: 1.5rem; color: #27ae60; font-weight: bold; }
         .order-form { display: grid; gap: 15px; margin-top: 20px; }
         .order-form label { font-weight: bold; font-size: 0.9rem; color: #555; margin-bottom: -10px; }
         .order-form input, .order-form select, .order-form textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; box-sizing: border-box; }
-        .total-display { font-size: 1.2rem; font-weight: bold; color: #1a508b; background: #eef2f7; padding: 15px; border-radius: 5px; text-align: center; }
+        .total-display { font-size: 1.4rem; font-weight: bold; color: #1a508b; background: #eef2f7; padding: 15px; border-radius: 5px; text-align: center; border: 2px solid #1a508b; }
 
         /* --- BUTTONS --- */
-        .btn { border: none; padding: 12px 25px; border-radius: 8px; color: white; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.3s; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+        .btn { border: none; padding: 15px 25px; border-radius: 8px; color: white; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.3s; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; text-align: center; }
         .btn-play { background: #27ae60; margin: 5px; }
         .btn-stop { background: #c0392b; margin: 5px; }
         .btn-share { background: #3498db; margin: 5px; }
-        .btn-order { background: #1a508b; width: 100%; margin-top: 10px; font-size: 1.2rem; }
+        
+        .btn-order { background: #1a508b; width: 100%; margin-top: 10px; }
+        .btn-paypal { background: #ffc439; color: #003087; width: 100%; margin-top: 10px; font-size: 1.1rem; border: 1px solid #e2ae31; }
+        .btn-paypal img { height: 20px; margin-right: 10px; }
+        
         .btn:hover { opacity: 0.8; transform: translateY(-2px); }
 
         .media-container { text-align: center; margin: 20px 0; }
@@ -62,7 +62,7 @@
             <li><a href="#kennen-sie-das">Das Problem</a></li>
             <li><a href="#was-ist-heypin">Die Lösung</a></li>
             <li><a href="#video">Video</a></li>
-            <li><a href="#shop">Shop & Bestellung</a></li>
+            <li><a href="#shop">Shop & Zahlung</a></li>
             <li><a href="#feedback">Kundenmeinungen</a></li>
             <li><a href="#impressum">Impressum</a></li>
         </ul>
@@ -85,33 +85,8 @@
         <audio id="myAudio" loop><source src="AUD-20260103-WA0028.mp3" type="audio/mpeg"></audio>
     </section>
 
-    <section id="kennen-sie-das">
-        <h2>Kennen Sie das?</h2>
-        <div class="problem-box">
-            <p>Wir alle kennen das. Man läuft umsonst zum Briefkasten, nur um dann festzustellen, dass dieser leer ist. Hinzu kommen die unnötigen Verrenkungen, die man vollzieht, um einen Blick durch die Briefkastenklappe zu erhaschen, sowie die fragenden Blicke der neugierigen Nachbarschaft.</p>
-            <p><strong>All dies kann mit dem HeyPin der Vergangenheit angehören.</strong></p>
-        </div>
-    </section>
-
-    <section id="was-ist-heypin">
-        <h2>Was ist der HeyPin?</h2>
-        <p class="highlight-text">Ein Blick, ein Pin, ein Lächeln.</p>
-        <p>Der HeyPin ist ein hervorragendes Beispiel für ein Produkt, das durch seine <strong>radikale Einfachheit</strong> überzeugt. Es gibt keine komplizierte Mechanik, keine Batterie und keine App… nur ein klares, unmissverständliches, visuelles Signal.</p>
-        
-        <div class="media-container">
-            <img src="Kollage2.jpg.png" alt="HeyPin Prinzip" class="responsive-media">
-        </div>
-    </section>
-
-    <section id="video">
-        <h2>HeyPin in Aktion</h2>
-        <div class="media-container">
-            <video controls class="responsive-media"><source src="Video2.mp4" type="video/mp4"></video>
-        </div>
-    </section>
-
     <section id="shop">
-        <h2>Shop & Bestellanfrage</h2>
+        <h2>Shop & Zahlung</h2>
         
         <div class="product-box">
             <h3>HeyPin Set</h3>
@@ -126,19 +101,14 @@
         </div>
 
         <form class="order-form" id="orderForm">
-            <label for="name">Persönliche Daten:</label>
-            <input type="text" id="name" placeholder="Vor- und Zuname" required>
-            <input type="email" id="email" placeholder="Ihre E-Mail-Adresse" required>
-            <input type="text" id="address" placeholder="Straße, Hausnummer, PLZ, Ort" required>
-            
-            <label for="color">Wähle deine Farbe:</label>
+            <label for="color">1. Wähle deine Farbe:</label>
             <select id="color">
-                <option value="Schwarz mit rotem Pin">Farbe Schwarz mit rotem Pin</option>
-                <option value="Silber/Grau mit rotem Pin">Farbe Silber/Grau mit rotem Pin</option>
-                <option value="Weiß mit rotem Pin">Farbe Weiß mit rotem Pin</option>
+                <option value="Schwarz">Schwarz mit rotem Pin</option>
+                <option value="Silber-Grau">Silber/Grau mit rotem Pin</option>
+                <option value="Weiß">Weiß mit rotem Pin</option>
             </select>
 
-            <label for="quantity">Anzahl (max. 10):</label>
+            <label for="quantity">2. Anzahl (max. 10):</label>
             <select id="quantity" onchange="calculateTotal()">
                 <option value="1">1 Stück</option>
                 <option value="2">2 Stück</option>
@@ -150,78 +120,74 @@
 
             <div class="total-display" id="totalDisplay">Gesamtbetrag: 11,98 €</div>
 
-            <textarea id="message" placeholder="Zusätzliche Nachricht oder Fragen..."></textarea>
-            
-            <button type="button" class="btn btn-order" onclick="sendInquiry()">Bestellanfrage absenden</button>
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
+
+            <button type="button" class="btn btn-paypal" onclick="payWithPaypal()">
+                <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal">
+                Direkt per PayPal zahlen
+            </button>
+
+            <p style="text-align: center; margin: 10px 0; font-size: 0.9rem; color: #777;">- ODER -</p>
+
+            <input type="text" id="name" placeholder="Vor- und Zuname">
+            <input type="text" id="address" placeholder="Straße, PLZ, Ort">
+            <button type="button" class="btn btn-order" onclick="sendInquiry()">Per Rechnung bestellen (Anfrage)</button>
         </form>
-    </section>
-
-    <section id="feedback">
-        <h2>Kundenmeinungen</h2>
-        <div class="testimonial-card"><p>"Endlich laufe ich nichtmehr umsonst im Regen zum Tor. Genial einfach!"</p><strong>- Thomas M.</strong></div>
-        <div class="testimonial-card"><p>"Passt perfekt zu meinem anthrazitfarbenem Design-Briefkasten."</p><strong>- Julia S.</strong></div>
-        <div class="testimonial-card"><p>"Ich mag das Geräusch wenn er scharf gestellt wird. Ein sattes „klong“ !"</p><strong>- Markus D.</strong></div>
-    </section>
-
-    <section id="impressum" class="license-warning">
-        <h2>Impressum & Rechtliches</h2>
-        <p><strong>HeyPin ist per Gebrauchsmuster geschützt. Ein Nachbau ohne Genehmigung ist untersagt.</strong></p>
-        <div style="margin-top: 15px; line-height: 1.5;">
-            <strong>HeyPin GbR</strong><br>
-            Neurahlstedter Graben 8, 22143 Hamburg<br>
-            Kontakt: <a href="mailto:ckreischer0@gmail.com">ckreischer0@gmail.com</a>
-        </div>
+        <p style="font-size: 0.8rem; color: #888; margin-top: 15px; text-align: center;">
+            Hinweis: Bei PayPal-Zahlung geben Sie bitte Ihre Lieferadresse direkt im PayPal-Vorgang an.
+        </p>
     </section>
 
     <script>
         const audio = document.getElementById("myAudio");
+        const paypalEmail = "ckreischer0@gmail.com"; // Deine PayPal-Adresse
+
         function playAudio() { audio.play(); }
         function stopAudio() { audio.pause(); audio.currentTime = 0; }
         
+        function calculateTotalValue() {
+            const qty = document.getElementById("quantity").value;
+            return (qty * 7.99) + 3.99;
+        }
+
+        function calculateTotal() {
+            const total = calculateTotalValue();
+            document.getElementById("totalDisplay").innerText = "Gesamtbetrag: " + total.toLocaleString('de-DE', {minimumFractionDigits: 2}) + " €";
+        }
+
+        // PAYPAL FUNKTION
+        function payWithPaypal() {
+            const qty = document.getElementById("quantity").value;
+            const color = document.getElementById("color").value;
+            const total = calculateTotalValue().toFixed(2);
+            
+            // Erstellt den Link für die PayPal-Zahlung
+            const itemName = encodeURIComponent("HeyPin Set (" + color + ")");
+            const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${paypalEmail}&item_name=${itemName}&amount=${total}&currency_code=EUR&quantity=1`;
+            
+            window.open(paypalUrl, '_blank');
+        }
+
+        function sendInquiry() {
+            const name = document.getElementById("name").value;
+            const addr = document.getElementById("address").value;
+            const qty = document.getElementById("quantity").value;
+            const color = document.getElementById("color").value;
+            const total = document.getElementById("totalDisplay").innerText;
+
+            if(!name || !addr) { alert("Bitte füllen Sie Name und Adresse für die Rechnungsanfrage aus."); return; }
+
+            const subject = encodeURIComponent("Bestellanfrage HeyPin: " + color);
+            const body = encodeURIComponent("Hallo HeyPin Team,\n\nich möchte per Rechnung bestellen:\n\nFarbe: " + color + "\nAnzahl: " + qty + "\n" + total + "\n\nLieferadresse:\n" + name + "\n" + addr);
+            window.location.href = `mailto:${paypalEmail}?subject=${subject}&body=${body}`;
+        }
+
         function toggleMenu(event) {
             event.stopPropagation();
             const menu = document.getElementById("menu-overlay");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
         document.onclick = function() { document.getElementById("menu-overlay").style.display = "none"; };
-
-        function calculateTotal() {
-            const qty = document.getElementById("quantity").value;
-            const total = (qty * 7.99) + 3.99;
-            document.getElementById("totalDisplay").innerText = "Gesamtbetrag: " + total.toLocaleString('de-DE', {minimumFractionDigits: 2}) + " €";
-        }
-
-        function sendInquiry() {
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const addr = document.getElementById("address").value;
-            const qty = document.getElementById("quantity").value;
-            const color = document.getElementById("color").value;
-            const msg = document.getElementById("message").value;
-            const total = document.getElementById("totalDisplay").innerText;
-
-            if(!name || !email || !addr) { alert("Bitte füllen Sie Name, Email und Adresse aus."); return; }
-
-            const subject = encodeURIComponent("Bestellanfrage HeyPin: " + color);
-            const body = encodeURIComponent(
-                "Hallo HeyPin Team,\n\nich möchte folgende Bestellanfrage stellen:\n\n" +
-                "Farbe: " + color + "\n" +
-                "Anzahl: " + qty + " Stück\n" +
-                total + "\n\n" +
-                "Lieferadresse:\n" + name + "\n" + addr + "\n\n" +
-                "Meine E-Mail: " + email + "\n" +
-                "Nachricht: " + msg + "\n\n" +
-                "Bitte senden Sie mir die Informationen zur Zahlung zu."
-            );
-
-            window.location.href = "mailto:ckreischer0@gmail.com?subject=" + subject + "&body=" + body;
-        }
-
-        function sharePage() {
-            const shareData = { title: 'HeyPin', text: 'Der geniale Post Melder!', url: window.location.href };
-            if (navigator.share) { navigator.share(shareData); } 
-            else { window.open(`https://wa.me/?text=${encodeURIComponent(shareData.text + " " + shareData.url)}`, '_blank'); }
-        }
     </script>
 </body>
 </html>
