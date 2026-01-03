@@ -25,6 +25,10 @@
         section { background: #fff; padding: 25px; margin-bottom: 25px; border-radius: 12px; border: 1px solid #ddd; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         h2 { color: #1a508b; border-bottom: 2px solid #eee; padding-bottom: 10px; text-transform: uppercase; }
 
+        /* --- TEXT-STYLING --- */
+        .problem-box { background: #fff9e6; border-left: 5px solid #f1c40f; padding: 20px; border-radius: 5px; margin: 20px 0; }
+        .highlight-text { font-size: 1.2rem; font-weight: bold; color: #1a508b; text-align: center; margin: 20px 0; }
+
         /* --- SHOP & FORMULAR --- */
         .product-box { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #1a508b; }
         .price-tag { font-size: 1.5rem; color: #27ae60; font-weight: bold; }
@@ -34,7 +38,7 @@
         .total-display { font-size: 1.2rem; font-weight: bold; color: #1a508b; background: #eef2f7; padding: 15px; border-radius: 5px; text-align: center; }
 
         /* --- BUTTONS --- */
-        .btn { border: none; padding: 15px 25px; border-radius: 8px; color: white; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.3s; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+        .btn { border: none; padding: 12px 25px; border-radius: 8px; color: white; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.3s; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
         .btn-play { background: #27ae60; margin: 5px; }
         .btn-stop { background: #c0392b; margin: 5px; }
         .btn-share { background: #3498db; margin: 5px; }
@@ -55,7 +59,8 @@
         <ul>
             <li><a href="#">Start</a></li>
             <li><a href="details.html">Vorteile & Details</a></li>
-            <li><a href="#heypin">Was ist HeyPin?</a></li>
+            <li><a href="#kennen-sie-das">Das Problem</a></li>
+            <li><a href="#was-ist-heypin">Die Lösung</a></li>
             <li><a href="#video">Video</a></li>
             <li><a href="#shop">Shop & Bestellung</a></li>
             <li><a href="#feedback">Kundenmeinungen</a></li>
@@ -68,7 +73,7 @@
         <img src="IMG-20260101-WA0018.jpg" alt="HeyPin Logo" class="logo-bild">
         <h1>HeyPin</h1>
         <p class="description-main">Ein kurzer Blick genügt. Post ist da!</p>
-        <p class="description-sub">Keine Batterien, keine Apps, kein Bohren.</p>
+        <p class="description-sub">Ein Blick, ein Pin, ein Lächeln.</p>
     </header>
 
     <section>
@@ -77,13 +82,31 @@
             <button class="btn btn-stop" onclick="stopAudio()">■ Stopp</button>
             <button class="btn btn-share" onclick="sharePage()">🔗 Teilen</button>
         </div>
-        <audio id="myAudio" loop><source src="audio.mp3" type="audio/mpeg"></audio>
+        <audio id="myAudio" loop><source src="AUD-20260103-WA0028.mp3" type="audio/mpeg"></audio>
     </section>
 
-    <section id="heypin">
-        <h2>Das HeyPin Prinzip</h2>
+    <section id="kennen-sie-das">
+        <h2>Kennen Sie das?</h2>
+        <div class="problem-box">
+            <p>Wir alle kennen das. Man läuft umsonst zum Briefkasten, nur um dann festzustellen, dass dieser leer ist. Hinzu kommen die unnötigen Verrenkungen, die man vollzieht, um einen Blick durch die Briefkastenklappe zu erhaschen, sowie die fragenden Blicke der neugierigen Nachbarschaft.</p>
+            <p><strong>All dies kann mit dem HeyPin der Vergangenheit angehören.</strong></p>
+        </div>
+    </section>
+
+    <section id="was-ist-heypin">
+        <h2>Was ist der HeyPin?</h2>
+        <p class="highlight-text">Ein Blick, ein Pin, ein Lächeln.</p>
+        <p>Der HeyPin ist ein hervorragendes Beispiel für ein Produkt, das durch seine <strong>radikale Einfachheit</strong> überzeugt. Es gibt keine komplizierte Mechanik, keine Batterie und keine App… nur ein klares, unmissverständliches, visuelles Signal.</p>
+        
         <div class="media-container">
-            <img src="Kollage2.jpg.png" alt="HeyPin Collage" class="responsive-media">
+            <img src="Kollage2.jpg.png" alt="HeyPin Prinzip" class="responsive-media">
+        </div>
+    </section>
+
+    <section id="video">
+        <h2>HeyPin in Aktion</h2>
+        <div class="media-container">
+            <video controls class="responsive-media"><source src="Video2.mp4" type="video/mp4"></video>
         </div>
     </section>
 
@@ -131,13 +154,6 @@
             
             <button type="button" class="btn btn-order" onclick="sendInquiry()">Bestellanfrage absenden</button>
         </form>
-    </section>
-
-    <section id="video">
-        <h2>HeyPin in Aktion</h2>
-        <div class="media-container">
-            <video controls class="responsive-media"><source src="Video.mp4" type="video/mp4"></video>
-        </div>
     </section>
 
     <section id="feedback">
