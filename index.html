@@ -23,7 +23,13 @@
         .description-sub { font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.4; color: #d1d8e0; }
 
         section { background: #fff; padding: 25px; margin-bottom: 25px; border-radius: 12px; border: 1px solid #ddd; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        h2 { color: #1a508b; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { color: #1a508b; border-bottom: 2px solid #eee; padding-bottom: 10px; text-transform: uppercase; }
+
+        /* --- KUNDENMEINUNGEN --- */
+        .testimonial-container { display: flex; flex-direction: column; gap: 20px; margin-top: 20px; }
+        .testimonial-card { background: #f9fbfd; border-left: 5px solid #27ae60; padding: 20px; border-radius: 0 8px 8px 0; }
+        .testimonial-text { font-style: italic; color: #555; margin-bottom: 10px; }
+        .testimonial-author { font-weight: bold; color: #1a508b; }
 
         /* --- BUTTONS --- */
         .control-panel { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px; }
@@ -36,13 +42,12 @@
         .media-container { text-align: center; margin: 20px 0; }
         .responsive-media { max-width: 100%; height: auto; border-radius: 8px; }
 
-        /* --- DUMMY STYLE FÜR FEEDBACK & SHOP --- */
-        .dummy-content { color: #888; font-style: italic; padding: 20px; border: 1px dashed #ccc; text-align: center; border-radius: 8px; }
-
-        /* --- RECHTSHINWEIS --- */
+        /* --- IMPRESSUM & RECHT --- */
         .license-warning { border: 2px solid #c0392b; background: #fff5f5; padding: 25px; border-radius: 8px; color: #333; text-align: center; }
         .license-warning h2 { color: #c0392b; border-bottom: 2px solid #fadbd8; }
         .legal-text { font-size: 1.2rem; font-weight: bold; color: #c0392b; margin: 15px 0; }
+        .impressum-details { line-height: 1.8; margin-top: 20px; }
+        .impressum-details a { color: #1a508b; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -54,7 +59,7 @@
             <li><a href="#heypin">Was ist HeyPin?</a></li>
             <li><a href="#video">Video</a></li>
             <li><a href="#shop">Shop</a></li>
-            <li><a href="#feedback">Kundenfeedback</a></li>
+            <li><a href="#feedback">Kundenmeinungen</a></li>
             <li><a href="#impressum">Impressum</a></li>
         </ul>
     </nav>
@@ -87,9 +92,6 @@
         <div class="media-container">
             <img src="Kollage2.jpg.png" alt="HeyPin Collage" class="responsive-media">
         </div>
-        <div class="dummy-content">
-            Hier werden wir bald detaillierte Infos zu den Funktionen von HeyPin einfügen.
-        </div>
     </section>
 
     <section id="video">
@@ -103,46 +105,56 @@
 
     <section id="shop">
         <h2>Shop</h2>
-        <div class="dummy-content">
-            Der Shop-Bereich wird gerade vorbereitet. Bald können Sie HeyPin hier direkt bestellen.
-        </div>
+        <p style="text-align: center; font-style: italic; color: #888;">Der Shop-Bereich wird gerade vorbereitet. Bald können Sie HeyPin hier direkt bestellen.</p>
     </section>
 
     <section id="feedback">
-        <h2>Kundenfeedback</h2>
-        <div class="dummy-content">
-            „Platzhalter für die ersten Kundenmeinungen. Wir freuen uns auf Ihre Erfahrungen!“
+        <h2>Kundenmeinungen</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Endlich laufe ich nichtmehr umsonst im Regen zum Tor. Genial einfach!"</p>
+                <div class="testimonial-author">Thomas M.</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Passt perfekt zu meinem anthrazitfarbenem Design-Briefkasten. Fällt kaum auf und man sieht ihn erst richtig wenn er gebraucht wird."</p>
+                <div class="testimonial-author">Julia S.</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Frau und Kinder lieben ihn. Er bietet eine schöne Haptik und ist genau das was wir gesucht haben. Ich mag das Geräusch wenn er scharf gestellt wird. Ein sattes „klong“ !"</p>
+                <div class="testimonial-author">Markus D.</div>
+            </div>
         </div>
     </section>
 
     <section id="impressum" class="license-warning">
-        <h2>Rechtlicher Hinweis</h2>
+        <h2>Impressum & Rechtliches</h2>
         <p class="legal-text">Der HeyPin ist per Gebrauchsmuster geschützt. Ein Nachbau ohne Genehmigung ist untersagt.</p>
+        
         <hr style="border: 0; border-top: 1px solid #fadbd8; margin: 20px 0;">
-        <p><strong>Impressum:</strong><br>
-        HeyPin GbR<br>
-        Neurahlstedter Graben 8<br>
-        22143 Hamburg<br>
-        Kontakt: ckreischer0 (ät) gmail.com</p>
-        <p>&copy; 2026 HeyPin. Alle Rechte vorbehalten.</p>
+        
+        <div class="impressum-details">
+            <strong>HeyPin GbR</strong><br>
+            Neurahlstedter Graben 8<br>
+            22143 Hamburg<br><br>
+            <strong>Kontakt:</strong><br>
+            E-Mail: <a href="mailto:ckreischer0@gmail.com">ckreischer0@gmail.com</a>
+        </div>
+        
+        <p style="margin-top: 25px; font-size: 0.9rem;">&copy; 2026 HeyPin GbR. Alle Rechte vorbehalten.</p>
     </section>
 
     <script>
         const audio = document.getElementById("myAudio");
-
         function playAudio() { audio.play(); }
         function stopAudio() { audio.pause(); audio.currentTime = 0; }
-
         function toggleMenu(event) {
             event.stopPropagation();
             const menu = document.getElementById("menu-overlay");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
-
         document.onclick = function() {
             document.getElementById("menu-overlay").style.display = "none";
         };
-
         function sharePage() {
             const shareData = {
                 title: 'HeyPin - Der Post Melder',
