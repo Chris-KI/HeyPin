@@ -14,16 +14,13 @@
         h2 { color: #1a508b; border-bottom: 2px solid #eee; padding-bottom: 10px; }
         h3 { color: #1a508b; margin-top: 25px; }
         
-        /* Spezielles Styling für den Pitch-Intro-Satz */
         .pitch-headline { font-size: 1.5rem; font-weight: bold; color: #1a508b; text-align: center; margin: 30px 0; }
         .pitch-subhead { text-align: center; font-size: 1.1rem; color: #555; margin-bottom: 30px; }
 
-        /* Styling für Dummy-Bilder */
-        .dummy-image-container { text-align: center; margin: 25px 0; padding: 20px; background: #f9f9f9; border-radius: 8px; border: 2px dashed #ccc; }
-        .dummy-image { max-width: 100%; height: auto; border-radius: 5px; opacity: 0.8; }
+        .image-container { text-align: center; margin: 25px 0; }
+        .product-image { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid #ddd; }
         .image-caption { font-size: 0.9rem; color: #777; margin-top: 10px; font-style: italic; }
 
-        /* Pro/Con Grid Styles (beibehalten) */
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
         .pro-box { background: #e8f5e9; padding: 20px; border-radius: 8px; border-left: 5px solid #27ae60; }
         .con-box { background: #fff3e0; padding: 20px; border-radius: 8px; border-left: 5px solid #f39c12; }
@@ -46,63 +43,58 @@
     <p class="pitch-subhead">Hey Siri und Hey Google waren gestern, jetzt kommt der HeyPin.</p>
     
     <h2>Warum HeyPin? Die Idee.</h2>
-    <p>Wir wollten ein Produkt schaffen, das so simpel ist, dass es jeder sofort versteht, und das dennoch ein alltägliches Problem elegant löst. Es geht um die Rückkehr zur intelligenten Mechanik in einer überdigitalisierten Welt.</p>
+    <p>Wir wollten ein Produkt schaffen, das so simpel ist, dass es jeder sofort versteht. Es geht um die Rückkehr zur intelligenten Mechanik in einer überdigitalisierten Welt.</p>
 
-    <h3>Die Logo-Idee</h3>
-    <p>Das Logo visualisiert unsere Kernfunktion: Die Nutzung des 'H' und des 'i' im Namen HeyPin. Das 'i' wird umgedreht und mit roter Farbe hinterlegt. Der i-Punkt symbolisiert dabei den Pin im ausgelösten Zustand – ein klares visuelles Signal.</p>
+    <h3>Die Logo-Idee & Konzept</h3>
+    <p>Das Logo visualisiert unsere Kernfunktion: Die Nutzung des 'H' und des 'i' im Namen HeyPin. Das 'i' wird umgedreht und rot hinterlegt – der i-Punkt symbolisiert den Pin im ausgelösten Zustand.</p>
     
-    <div class="dummy-image-container">
-        <img src="https://via.placeholder.com/600x300/eef2f7/1a508b?text=PLATZHALTER:+Skizze+der+Logo-Idee+(H+und+umgedrehtes+i)" alt="Logo Skizze Platzhalter" class="dummy-image">
-        <p class="image-caption">(Platzhalter: Hier könnte eine Skizze oder Grafik Ihrer Logo-Entwicklung stehen.)</p>
+    <div class="image-container">
+        <img src="Bild1_offen.JPG" alt="HeyPin Konzept offen" class="product-image">
+        <p class="image-caption">Konzeptstudie: Die Mechanik des HeyPin im Detail.</p>
     </div>
 </section>
 
 <section>
     <h2>Die Problemstellung</h2>
-    <p>Jeder kennt das Problem: Man wartet auf die nächste Briefzustellung, weiß aber nicht genau, wann diese eintreffen wird. Man ist neugierig, was heute im Briefkasten sein wird… die neusten Prospekte, ein lang erwarteter Brief eines Verwandten, eine ausstehende Rechnung? Wie auch immer, man würde gerne wissen, was einen heute an Post erwartet.</p>
+    <p>Jeder kennt das Problem: Man wartet auf die Post, läuft umsonst zum Briefkasten, macht Verrenkungen an der Klappe und erntet fragende Blicke der Nachbarschaft.</p>
     
-    <div class="dummy-image-container">
-        <img src="https://via.placeholder.com/600x400/fff3e0/c0392b?text=PLATZHALTER:+Bild+vom+umsonst+zum+Briefkasten+laufen" alt="Problem Platzhalter" class="dummy-image">
-        <p class="image-caption">(Platzhalter: Ein Bild, das die Frustration zeigt – z.B. vergeblicher Blick in den Briefkasten im Regen.)</p>
+    <div class="image-container">
+        <img src="Gemini_Generated_Image_jpe256jpe256jpe2.png" alt="Problemdarstellung leerer Briefkasten" class="product-image">
+        <p class="image-caption">Das Problem: Ungewissheit und unnötige Wege zum leeren Briefkasten.</p>
     </div>
 
-    <p>Man macht sich neugierig auf den Weg zum Briefkasten um zu schauen ob der Postzusteller heute schon da war. Oder man kommt zufällig am Briefkasten vorbei und denkt sich man könnte doch mal nachschauen. Den Briefkastenschlüssel selbst hat man nicht eingesteckt und so bietet sich der schnelle Blick durch die Briefkastenklappe an, durch die man jedoch leider nur allzu schlecht sieht… ärgerlich.</p>
-    <p>Wir alle kennen das. Man läuft umsonst zum Briefkasten, nur um dann festzustellen, dass dieser leer ist. Hinzu kommen die unnötigen Verrenkungen die man vollzieht um einen Blick durch die Briefkastenklappe zu erhaschen sowie die fragenden Blicke der neugierigen Nachbarschaft.</p>
-    <p><strong>All dies kann mit dem HeyPin der Vergangenheit angehören.</strong></p>
+    <p>Man läuft umsonst zum Briefkasten, nur um dann festzustellen, dass dieser leer ist. All dies kann mit dem HeyPin der Vergangenheit angehören.</p>
 </section>
 
 <section>
     <h2>Die Lösung</h2>
-    <p>HeyPin kommt ohne elektronische Sensoren aus, welche oft teuer sind, wartungsintensiv und optisch nicht ins Bild passen. Die klassischen US-Fahnen zum Beispiel wirken oft klobig und stören das Design moderner Briefkästen enorm.</p>
-    <p>Unsere Lösung ist so einfach wie genial. Sie übernimmt die Grundidee, dass es sinnvoll ist zu wissen, ob der Briefkasten gefüllt oder leer ist, dabei soll jedoch die Privatsphäre gewahrt werden.</p>
+    <p>Unsere Lösung ist so einfach wie genial. Ein kleiner farbiger Pin, der im Ruhezustand nahezu unsichtbar ist und sich harmonisch in das Design moderner Briefkästen einfügt.</p>
 
-    <div class="dummy-image-container">
-        <img src="https://via.placeholder.com/600x400/e8f5e9/27ae60?text=PLATZHALTER:+HeyPin+in+Aktion+(Roter+Pin+sichtbar)" alt="Lösung Platzhalter" class="dummy-image">
-        <p class="image-caption">(Platzhalter: Eine Nahaufnahme des HeyPin am Briefkasten, wenn der rote Pin ausgelöst hat.)</p>
+    <div class="image-container">
+        <img src="2.jpg" alt="Die HeyPin Lösung am Briefkasten" class="product-image">
+        <p class="image-caption">Die Lösung: Ein klares, unmissverständliches visuelles Signal.</p>
     </div>
 
-    <h3>Ein kleiner farbiger Pin.</h3>
-    <p>Er ist im Ruhezustand nahezu unsichtbar und versteckt sich in seinem an den Briefkasten farblich harmonisch angepassten, minimalistischen Gehäuse aus UV-beständigem Kunststoff. Er wird erst in dem Moment mechanisch automatisch aktiviert (die magnetische Verbindung wird gelöst), in dem die Briefkastenklappe vom Postboten geöffnet wird.</p>
+    <p>Der Pin wird mechanisch automatisch aktiviert, sobald der Postbote die Klappe öffnet. Keine Elektronik, kein Wartungsaufwand.</p>
 </section>
 
 <section>
-    <h2>Zusammenfassung auf einen Blick</h2>
+    <h2>Zusammenfassung</h2>
     <div class="grid">
         <div class="pro-box">
             <h3>Das begeistert ✅</h3>
             <ul>
                 <li><strong>Radikal einfach:</strong> Ein Blick genügt.</li>
-                <li><strong>Wartungsfrei:</strong> Keine Batterien, keine Elektronik.</li>
-                <li><strong>Privatsphäre:</strong> Keine App, keine Datenwolke.</li>
-                <li><strong>Design:</strong> Unauffällig, bis er gebraucht wird.</li>
+                <li><strong>Wartungsfrei:</strong> Keine Batterien.</li>
+                <li><strong>Privatsphäre:</strong> Keine App nötig.</li>
                 <li><strong>Montage:</strong> Kleben statt Bohren.</li>
             </ul>
         </div>
         <div class="con-box">
             <h3>Zur Beachtung ⚠️</h3>
             <ul>
-                <li><strong>Kein Fern-Alarm:</strong> Das Signal ist visuell am Briefkasten, nicht auf dem Handy.</li>
-                <li><strong>Manueller Reset:</strong> Nach der Entnahme wird der Pin mit einem Handgriff zurückgesetzt ("Klong!").</li>
+                <li><strong>Visuelles Signal:</strong> Man muss zum Briefkasten schauen (kein Handy-Push).</li>
+                <li><strong>Reset:</strong> Kurzer Handgriff nach Postentnahme.</li>
             </ul>
         </div>
     </div>
